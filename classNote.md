@@ -63,4 +63,67 @@
 # Oracle数据库
 数据库与实例： 一个数据库可以建立多个实例（SID），一个实例可以在任何时候访问数据库
 
+# SQL
 
+## DDL
+
+基本数据库对象： 表，视图，约束
+创建:
+```sql
+create table 表名称（
+
+字段1 数据类型 【default 默认值】，
+
+字段2 数据类型  【default  默认值】
+
+.......
+
+字段3 数据类型  【default 默认值】
+
+主键外键相关约束
+）；
+
+```
+
+**主键、外键、唯一、检查这四项，既可以创建列约束，也可以创建表约束。而缺省 和 非空只能创建列约束。**
+
+主键约束和唯一性约束的一个重要区别就是主键约束不能为空，而唯一性约束可以
+
+删除：
+```sql
+drop table mytable;
+```
+
+更改：
+```sql
+1、增加列
+  alter table SMS_LOG ADD SEND_ID NUMBER;
+2、删除列
+  ALTER TABLE users DROP COLUMN address;
+3、修改字段类型
+  alter table GROUP modify CREATOR_NO varchar2(50);
+```
+
+## DML
+增删改查，其中查可以单独归类为DQL
+增：
+```sql
+insert into a (id) values(4);        //表a后有选择字段，未选定的字段如果指定了default,则以default的值代替null
+```
+
+删：
+```sql
+delete from mytable where 1 = 1 ;
+```
+
+改
+```sql
+UPDATE 表名 SET 字段='XXX' WHERE 条件;
+```
+
+查
+解析顺序
+
+from->where->group by->having->select->order by
+
+聚合函数
