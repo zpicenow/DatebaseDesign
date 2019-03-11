@@ -38,3 +38,7 @@ from employee
 select ename,
 sal+NVL(comm,0) sall,
 nvl2(comm,sal+comm,sal) sal2,
+
+select ename dno
+from employee , my
+where employee.empmp = my.empmp(+)  --带+的是副表，不带加号的是主表，主表全部显示，
