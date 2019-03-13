@@ -190,3 +190,27 @@ where exist (select count(*)
                 having count(*)>3)
 ```
 
+#### 集合查询
+
++ union： 只有相同类型的数据才能合并
++ intersect ： 交集
++ minus : 差集，去重
+#### 琐碎关键字
++ dual
+
+一个单行单列的表，充当一个占位表，使输出的有意义，保持输出结构平衡
++ sysdate ： 获取系统时间
+
+#### 表间数据转换
+```sql
+insert into table1 select * from table2;
+//如table1的字段为 id,name,value，而table2的字段为id,name
+insert into table1 select id,name,null from table2;
+//如table1的字段为 id,name,而table2的字段为id,name,value
+insert into table1 select id,name from table2;
+
+```
+
+合并  merge
+
+### 数字函数
