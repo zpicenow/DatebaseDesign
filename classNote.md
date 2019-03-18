@@ -211,6 +211,32 @@ insert into table1 select id,name from table2;
 
 ```
 
-合并  merge
+合并  merge : 备份，merge into后面是备份到的表，using后面是被备份的表
 
-### 数字函数
+
+### 单行函数，多行函数
+顾名思义，单行函数就是一行调用的函数，比如数字函数
+多行函数就是多行语句，比如聚集函数
+
+#### 数字函数
++ 四舍五入： round(原数，保留位数) from dual;
+
+保留位数为0就是保留整数，负数就是往整数部分保留（保留十位，百位等）；
++ 截断： truck（）只取到小数点后一位，只舍不入
++ 取模：mod（）
++ 大小写转换：upper（）大写，lower（）小写
++ 获取长度：length
++ 去掉空白：ltrim，rtrim，trim
++ 截取字符串： substr（str，begin，length）：begin为负数时，从后面数begin位，然后向后截取length，begin可省
++ 查找子串： instr(父串，子串，开始查找位置，第几次出现的位置)，最后两个参数可以省略
++　字符串填充：　LPAD（原字符串，预达到长度，填充字符），RPAD，L是左填充，R是右填充
+#### 日期处理
++ last_day() ： 参数月份当月的最后一天
++ add_mouth():
++ next_day():
++ mouth_between()
+
+#### 类型转换函数
++ to_char(): 数字转字符
++ to_number(): 字符转数字
++ to_date()/to_char()；字符和日期
