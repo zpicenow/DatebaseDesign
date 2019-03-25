@@ -220,7 +220,7 @@ insert into table1 select id,name from table2;
 
 #### 数字函数
 + 四舍五入： round(原数，保留位数) from dual;
-
++ 首字母大写： initcap
 保留位数为0就是保留整数，负数就是往整数部分保留（保留十位，百位等）；
 + 截断： truck（）只取到小数点后一位，只舍不入
 + 取模：mod（）
@@ -240,3 +240,38 @@ insert into table1 select id,name from table2;
 + to_char(): 数字转字符
 + to_number(): 字符转数字
 + to_date()/to_char()；字符和日期
+
+to_date("2015-2月-12"，“YYYY-MM‘月’-DD”)
++ 显示转换与隐式转换
++ 钱的格式，to_char(sal,"L999,999.99");
+
+L是本地金钱单位，￥或者$，后面数字是格式
+
++ decode情景查询，等值比较；case情景查询可以是区间段比较
+
+decode(表达式 条件1，结果1，条件2，结果2，...缺省值)
+case 表达式 when 条件 then 结果...end ： 只能是等值比较，如果区间段的话，select后面不加变量，变量在条件语句中体现
+
+
+nvl(col,"xxx")
+
+nvl2(col,"aaa","bbb")
+
+nvl如果是col列非空就显示值，如果是空值就输出指定的xxx，nvl2如果非空就输出aaa，空值就输出bbb
+
++ 修改数据库系统时间 alter system；修改本数据实例时间alter session；
+
+#### 层次查询
+start with子句 ： 起始位置
+
+connect by prior子句 ： 父子结点关系
+
+```
+select ename,empno,mgr,level
+from emp
+start with ename='KING'
+connect with prior empno=mgr
+
+```
+
+从KING这个人开始找，找出empno等于前一个mgr的,level是对应层次
