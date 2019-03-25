@@ -279,3 +279,13 @@ connect with prior empno=mgr
 start with可以省略  ；如果省略的话，将每一条数据作为根节点查一遍；prior代表方向，上一级；
 语句的逻辑是prior empno=mgr ： 上一级的empno等于mgr；
 所以empno = prior mgr : 意思就是本次查询的empno等于下次查询的mgr
+
++ 翻译函数  translate
+
+```sql
+select translate('abcdggggggg','acd','123') from dual
+//将字符串中的acd对！应！替换成123，因为acd不是子串，是不连续的，所以这是和replace的区别
+//对于后两个参数长度不匹配时从前往后一一对应，
+```
+
+
