@@ -275,3 +275,7 @@ connect with prior empno=mgr
 ```
 
 从KING这个人开始找，找出empno等于前一个mgr的,level是对应层次
+
+start with可以省略  ；如果省略的话，将每一条数据作为根节点查一遍；prior代表方向，上一级；
+语句的逻辑是prior empno=mgr ： 上一级的empno等于mgr；
+所以empno = prior mgr : 意思就是本次查询的empno等于下次查询的mgr
