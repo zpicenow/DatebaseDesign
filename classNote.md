@@ -288,4 +288,24 @@ select translate('abcdggggggg','acd','123') from dual
 //对于后两个参数长度不匹配时从前往后一一对应，
 ```
 
+#### 分析查询
 
++ 开窗函数 over（）
+
+用于分组之后，显示统计的结果是由哪些部分合成
+括号里可以是order by或者partition by
+
+```sql
+select sum(sal),deptno  --empno,sal无法显示
+from emp
+group by deptno
+
+select sum(sal) over(partition by deptno) ,empno,sal
+from emp
+group by deptno
+
+
+select sum(sal)over(partition by deptno order by sal)empno,sal
+from emp
+group by deptno
+//显示的的逐渐递增的过程，sumsal是逐渐累加的
