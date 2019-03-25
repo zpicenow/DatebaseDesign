@@ -309,3 +309,9 @@ select sum(sal)over(partition by deptno order by sal)empno,sal
 from emp
 group by deptno
 //显示的的逐渐递增的过程，sumsal是逐渐累加的
+```
+
++ rank（）等级，有并列的会加上 1,2,2,4
++ dense_rank()： 连续等级，有并列的不会加，1,2,2,3
++ first_value/last_value(): 显示查询出来的第一条数据的某个参数，附加到每一条查询数据中
++ row_number:
