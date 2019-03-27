@@ -315,3 +315,13 @@ group by deptno
 + dense_rank()： 连续等级，有并列的不会加，1,2,2,3
 + first_value/last_value(): 显示查询出来的第一条数据的某个参数，附加到每一条查询数据中
 + row_number:
+
+
+#### 数据类型
+
++ number: 不指定是32位，number(a,b):a代表全部位数，b代表小数位数，小数位数若为负数，就是小数点向左数的对应位数置零
++ Interger（n）：n位整数
++ varchar，varchar2：varchar固定长度，不够空格填充，varchar2不填充
++ char：固定长度字符
++ date，time：日期类型
+
