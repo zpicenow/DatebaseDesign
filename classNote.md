@@ -341,3 +341,7 @@ select name.currentvalue from dual
 ```
 
 truncate table name  //截断表，清空数据，不可回滚
+
+#### 视图
+
+为了安全，不对外公开内容
