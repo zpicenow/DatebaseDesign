@@ -325,3 +325,19 @@ group by deptno
 + char：固定长度字符
 + date，time：日期类型
 
+#### 序列
+```
+
+create sequence name
+    start with 1 //从1开始
+    increment by 1      //每次增长1
+    maxvalue 1000       // 最大值增长到多少
+    minvalue 1          //最小值
+    cache ()            //是否缓存
+
+
+select name.nextvalue from dual
+select name.currentvalue from dual
+```
+
+truncate table name  //截断表，清空数据，不可回滚
