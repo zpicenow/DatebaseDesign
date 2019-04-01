@@ -352,7 +352,7 @@ truncate table name  //截断表，清空数据，不可回滚
 关系视图是一张虚拟的表，增删改查操作与表类似
 
 ```
-create [or replace] [force] view 名字（列）
+create [or replace] [force] view 名字（列）;
 as
 select 子句
 with check option
@@ -378,3 +378,22 @@ with check option 对于update要保证之前能查到的条目更新之后一�
     对于delete无影响
     对于insert插入的数据必须能查到
     with字句与where是成对出现的，没有where的with无意义
+
+#### 对象视图
+
++ Oracle中的对象
+```
+create or replace my_name as object(
+列属性，和建表相同
+);
+```
+
+#### 内前视图
+
+
+前三种视图都是对基础表的增删改查
+但是下一种是占用空间的
+
+#### 物化视图
+不适合频繁更改的操作
+create materialized
