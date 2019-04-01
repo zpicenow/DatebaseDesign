@@ -324,6 +324,8 @@ group by deptno
 + varchar，varchar2：varchar固定长度，不够空格填充，varchar2不填充
 + char：固定长度字符
 + date，time：日期类型
++ nchar:限定字符集
+
 
 #### 序列
 ```
@@ -342,6 +344,22 @@ select name.currentvalue from dual
 
 truncate table name  //截断表，清空数据，不可回滚
 
-#### 视图
+### 视图
 
-为了安全，不对外公开内容
+为了安全，不对外公开内容，选择部分数据对外可见，隐藏数据的复杂性
+
+#### 关系视图
+关系视图是一张虚拟的表，增删改查操作与表类似
+
+```
+create [or replace] [force] view 名字（列）
+as
+select 子句
+with
+```
+
+or replace表示替换已存在的同名
+
+force表示即是原表不存在也强制创建
+
+with check option是对视图的DML限制
