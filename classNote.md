@@ -355,7 +355,7 @@ truncate table name  //截断表，清空数据，不可回滚
 create [or replace] [force] view 名字（列）
 as
 select 子句
-with
+with check option
 ```
 
 or replace表示替换已存在的同名
@@ -363,3 +363,18 @@ or replace表示替换已存在的同名
 force表示即是原表不存在也强制创建
 
 with check option是对视图的DML限制
+
+关系型视图的增删改查都是基于原表，即添加信息也是向表中添加
+
+```
+create or replace view my_view
+as
+select *
+from dept
+where deptno > 10
+with check option
+```
+with check option 对于update要保证之前能查到的条目更新之后一样能查到
+    对于delete无影响
+    对于insert插入的数据必须能查到
+    with字句与where是成对出现的，没有where的with无意义
