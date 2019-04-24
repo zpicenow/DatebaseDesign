@@ -328,7 +328,7 @@ group by deptno
 
 
 #### 序列
-```
+```sql
 
 create sequence name
     start with 1 //从1开始
@@ -351,7 +351,7 @@ truncate table name  //截断表，清空数据，不可回滚
 #### 关系视图
 关系视图是一张虚拟的表，增删改查操作与表类似
 
-```
+```sql
 create [or replace] [force] view 名字（列）;
 as
 select 子句
@@ -366,7 +366,7 @@ with check option是对视图的DML限制
 
 关系型视图的增删改查都是基于原表，即添加信息也是向表中添加
 
-```
+```sql
 create or replace view my_view
 as
 select *
@@ -382,7 +382,7 @@ with check option 对于update要保证之前能查到的条目更新之后一�
 #### 对象视图
 
 + Oracle中的对象
-```
+```sql
 create or replace my_name as object(
 列属性，和建表相同
 );
