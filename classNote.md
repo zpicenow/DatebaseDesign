@@ -228,8 +228,8 @@ insert into table1 select id,name from table2;
 + 获取长度：length
 + 去掉空白：ltrim，rtrim，trim
 + 截取字符串： substr（str，begin，length）：begin为负数时，从后面数begin位，然后向后截取length，begin可省
-+ 查找子串： instr(父串，子串，开始查找位置，第几次出现的位置)，最后两个参数可以省略
-+　字符串填充：　LPAD（原字符串，预达到长度，填充字符），RPAD，L是左填充，R是右填充
++ 查找子串： instr(父串，子串，开始查找位置，第几次出现的位置)，最后两个参数可以省略  
++ 字符串填充：　LPAD（原字符串，预达到长度，填充字符），RPAD，L是左填充，R是右填充
 #### 日期处理
 + last_day() ： 参数月份当月的最后一天
 + add_mouth():
